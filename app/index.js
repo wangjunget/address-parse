@@ -6,9 +6,12 @@
 import 'styles/index.scss';
 import AddressParse from './lib/address-parse'
 import $ from 'jquery'
+import testData from './lib/test.json'
+
+AddressParse.init(testData)
 
 const parse = () => {
-    let type = 0
+    let type = 1
     const onTextAreaBlur = (e) => {
         const address = e.target.value
         const parseResult = AddressParse(address, { type, textFilter: ['电話', '電話', '聯系人'] })
